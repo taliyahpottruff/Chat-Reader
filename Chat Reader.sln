@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat Reader App", "Chat Reader App\Chat Reader App.csproj", "{A86E370B-2351-46E2-A47B-9F5FE0D4F5E0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat Reader", "Chat Reader\Chat Reader.csproj", "{8E1F37C1-8C70-496E-AB92-CBA30C8A943B}"
 EndProject
 Global
@@ -15,14 +13,6 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A86E370B-2351-46E2-A47B-9F5FE0D4F5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A86E370B-2351-46E2-A47B-9F5FE0D4F5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A86E370B-2351-46E2-A47B-9F5FE0D4F5E0}.Debug|x64.ActiveCfg = Debug|x64
-		{A86E370B-2351-46E2-A47B-9F5FE0D4F5E0}.Debug|x64.Build.0 = Debug|x64
-		{A86E370B-2351-46E2-A47B-9F5FE0D4F5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A86E370B-2351-46E2-A47B-9F5FE0D4F5E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A86E370B-2351-46E2-A47B-9F5FE0D4F5E0}.Release|x64.ActiveCfg = Release|x64
-		{A86E370B-2351-46E2-A47B-9F5FE0D4F5E0}.Release|x64.Build.0 = Release|x64
 		{8E1F37C1-8C70-496E-AB92-CBA30C8A943B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E1F37C1-8C70-496E-AB92-CBA30C8A943B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E1F37C1-8C70-496E-AB92-CBA30C8A943B}.Debug|x64.ActiveCfg = Debug|Any CPU
