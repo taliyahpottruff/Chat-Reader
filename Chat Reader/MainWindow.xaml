@@ -30,8 +30,8 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Vertical">
-            <Button Name="AboutButton" Click="AboutButton_Click">About</Button>
-            <Button Name="LogOutButton" Click="LogOutButton_Click">Log Out</Button>
+            <MenuItem Name="AboutButton" Click="AboutButton_Click" Header="About"></MenuItem>
+            <MenuItem Name="LogOutButton" Click="LogOutButton_Click" Header="Log Out"></MenuItem>
         </StackPanel>
         <ListBox Grid.Column="1" Name="Chat" Background="#FF181818" Foreground="White" BorderThickness="0"></ListBox>
     </Grid>

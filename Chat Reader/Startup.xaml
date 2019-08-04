@@ -37,6 +37,11 @@
         <PasswordBox Grid.Column="1" Grid.Row="5" Name="KeyTextField" Width="350" />
         <Button Name="btnTwitchLogin" Grid.Column="1" Grid.Row="8" Content="Login to Twich" Background="#FF6441A4 " BorderBrush="#FF6441A4" Click="BtnTwitchLogin_Click" />
         <TextBlock Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10,0,0">Don't Know your OAuth Key? Go <Hyperlink NavigateUri="https://twitchapps.com/tmi/" RequestNavigate="Hyperlink_RequestNavigate">Here</Hyperlink>.</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10,0,0" FontWeight="Bold">This app stores your login details on your local machine only</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10,0,0" FontWeight="Bold">
+            This app stores your login details on your local machine only
+            <LineBreak />
+            <LineBreak />
+            REMEMBER: Don't ever show your plaintext OAuth Key on stream!
+        </TextBlock>
     </Grid>
 </Window>
