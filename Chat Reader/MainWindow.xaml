@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chat_Reader"
         mc:Ignorable="d"
-        Title="Chat Reader" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Chat Reader" Height="450" Width="800"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto" ResizeMode="CanResize">
 
     <DockPanel>
         <Menu DockPanel.Dock="Top">

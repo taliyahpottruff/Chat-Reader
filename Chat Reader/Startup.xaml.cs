@@ -46,9 +46,9 @@ namespace Chat_Reader {
 			e.Handled = true;
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e) {
+		private void BtnTwitchLogin_Click(object sender, RoutedEventArgs e) {
 			string username = UsernameTextField.Text;
-			string oauth = KeyTextField.Text;
+			string oauth = KeyTextField.Password;
 
 			try {
 				new MainWindow(username, oauth).Show();
@@ -57,7 +57,7 @@ namespace Chat_Reader {
 			} catch (Exception) {
 				//Twitch login was probably bad
 				UsernameTextField.Text = "";
-				KeyTextField.Text = "";
+				KeyTextField.Clear();
 				new ErrorWindow("The Twitch username you submitted is invalid!").ShowDialog();
 			}
 		}

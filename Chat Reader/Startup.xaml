@@ -5,24 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chat_Reader"
         mc:Ignorable="d"
-        Title="Startup" Height="225" Width="379.546">
-    <Grid Background="#FF181818">
+        Title="Startup" Height="450" Width="400"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto" ResizeMode="NoResize">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="25"></RowDefinition>
-            <RowDefinition Height="25"></RowDefinition>
-            <RowDefinition Height="25"></RowDefinition>
-            <RowDefinition Height="25"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="75" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="75" />
+            <RowDefinition Height="10" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">Enter your Twitch OAuth code below. If you don't have one you can get one <Hyperlink NavigateUri="https://twitchapps.com/tmi" RequestNavigate="Hyperlink_RequestNavigate">here</Hyperlink>.</TextBlock>
-        <Label Grid.Row="1" Foreground="White">Username</Label>
-        <TextBox Grid.Row="2" Name="UsernameTextField"></TextBox>
-        <Label Grid.Row="3" Foreground="White">OAuth Key (DO NOT SHOW THIS ON STREAM):</Label>
-        <TextBox Grid.Row="4" Name="KeyTextField"></TextBox>
-        <Button Grid.Row="5" Background="#FF6441A4" Foreground="White" FontWeight="Bold" FontSize="16pt" Grid.ColumnSpan="2" Click="Button_Click" Margin="0,10,0,0">Login to Twitch</Button>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Login" TextAlignment="Center" FontSize="55" />
+        <Label Grid.Column="1" Grid.Row="2" Content="Twitch Username" />
+        <TextBox Grid.Column="1" Grid.Row="3" Name="UsernameTextField" Width="350" />
+        <Label Grid.Column="1" Grid.Row="4" Content="OAuth Key" />
+        <PasswordBox Grid.Column="1" Grid.Row="5" Name="KeyTextField" Width="350" />
+        <Button Name="btnTwitchLogin" Grid.Column="1" Grid.Row="8" Content="Login to Twich" Background="#FF6441A4 " BorderBrush="#FF6441A4" Click="BtnTwitchLogin_Click" />
+        <TextBlock Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10,0,0">Don't Know your OAuth Key? Go <Hyperlink NavigateUri="https://twitchapps.com/tmi/" RequestNavigate="Hyperlink_RequestNavigate">Here</Hyperlink>.</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10,0,0" FontWeight="Bold">This app stores your login details on your local machine only</TextBlock>
     </Grid>
 </Window>
