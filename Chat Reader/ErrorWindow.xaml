@@ -1,0 +1,21 @@
+﻿<Window x:Class="Chat_Reader.ErrorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chat_Reader"
+        mc:Ignorable="d"
+        Title="ErrorWindow" Height="135.227" Width="377.272">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="ErrorText" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" TextWrapping="Wrap">Error text!</TextBlock>
+        <Button Name="ConfirmButton" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" Click="ConfirmButton_Click">Okay</Button>
+    </Grid>
+</Window>

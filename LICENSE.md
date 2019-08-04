@@ -1,2 +1,2 @@
 
-Copyright (C) 2019 Trenton Pottruff
+Copyright (C) 2019 Semicolon Entertainment Ltd.
