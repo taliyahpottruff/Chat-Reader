@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Speech.Synthesis;
-using System.Text.RegularExpressions;
+﻿using System.ComponentModel;
 using System.Windows;
-using TwitchLib.Client;
 
 namespace Chat_Reader {
 	/// <summary>
@@ -14,8 +7,6 @@ namespace Chat_Reader {
 	/// </summary>
 	public partial class MainWindow : Window {
 		Bot bot;
-
-		bool tempLogoutResult;
 
 		public MainWindow(string username, string oauth) {
 			bot = new Bot(username, oauth, this);
