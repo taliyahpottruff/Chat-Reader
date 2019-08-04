@@ -1,3 +1,5 @@
+A build is coming very soon!
+
 # Chat Reader
 A handy little tool that will read out your Twitch chat to you.
 
