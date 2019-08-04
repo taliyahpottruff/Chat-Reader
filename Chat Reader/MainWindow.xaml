@@ -12,7 +12,7 @@
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto" ResizeMode="CanResize">
 
-    <DockPanel>
+    <!--<DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem Name="LogOutButton" Header="_Log Out" Click="LogOutButton_Click" />
@@ -21,5 +21,18 @@
             <MenuItem Header="_About" Name="AboutButton" Click="AboutButton_Click"></MenuItem>
         </Menu>
         <ListBox Name="Chat" Background="#FF181818" Foreground="White" BorderThickness="0"></ListBox>
-    </DockPanel>
+    </DockPanel>-->
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical">
+            <Button Name="AboutButton" Click="AboutButton_Click">About</Button>
+            <Button Name="LogOutButton" Click="LogOutButton_Click">Log Out</Button>
+        </StackPanel>
+        <ListBox Grid.Column="1" Name="Chat" Background="#FF181818" Foreground="White" BorderThickness="0"></ListBox>
+    </Grid>
 </Window>

@@ -46,6 +46,8 @@ namespace Chat_Reader {
 			client.Connect();
 
 			InitializeComponent();
+
+			Title += $" {App.GetVersionString()}";
 		}
 
 		private void Client_OnDisconnected(object sender, TwitchLib.Communication.Events.OnDisconnectedEventArgs e) {
@@ -87,16 +89,33 @@ namespace Chat_Reader {
 			int wordCount = words.Count;
 			float uniquePercent = (float)unique / (float)wordCount;
 
-			chats.Add($"{user}: {message}");
-			Dispatcher.Invoke(new Action(() => {
-				Chat.ItemsSource = null;
-				Chat.ItemsSource = chats;
-			}));
+			//Loop through and remove spam words
+			List<int> removeIndexes = new List<int>();
+			for (int i = 0; i < wordCount; i++) {
+				if (words[i].Length > 25) {
+					removeIndexes.Add(i);
+				}
+			}
+			for (int i = removeIndexes.Count - 1; i >= 0; i--) {
+				words.RemoveAt(removeIndexes[i]);
+			}
 
-			message = Regex.Replace(message, @"[^\w\s0-9\.,`!;]", "");
-			message = Regex.Replace(message, @"http[^\s]*", "link");
+			//Reconstruct message
+			string newMessage = "";
+			foreach (string word in words) {
+				newMessage += word + " ";
+			}
 
-			if (!message.StartsWith("!") && (uniquePercent > 0.5f || wordCount <= 3)) {
+			newMessage = Regex.Replace(newMessage, @"[^\w\s0-9\.,`!;]", " ");
+			newMessage = Regex.Replace(newMessage, @"http[^\s]*", "link");
+
+			if (!message.StartsWith("!") && (uniquePercent > 0.5f || wordCount <= 3) && words.Count > 0) {
+				chats.Add($"{user}: {message}");
+				Dispatcher.Invoke(new Action(() => {
+					Chat.ItemsSource = null;
+					Chat.ItemsSource = chats;
+				}));
+
 				if (!voices.ContainsKey(user)) {
 					ReadOnlyCollection<InstalledVoice> installed = speech.GetInstalledVoices();
 					int randomName = random.Next(0, 2);
@@ -111,7 +130,7 @@ namespace Chat_Reader {
 				speech.SelectVoice(voices[user].name);
 				speech.Rate = voices[user].rate;
 				string userToSay = (lastUser == user) ? "" : $"{user.Replace("_", " ")} says: ";
-				Prompt p = speech.SpeakAsync($"{userToSay}{message}");
+				Prompt p = speech.SpeakAsync($"{userToSay}{newMessage}");
 				lastUser = user;
 			}
 		}
@@ -122,7 +141,8 @@ namespace Chat_Reader {
 		}
 
 		private void AboutButton_Click(object sender, RoutedEventArgs e) {
-			MessageBox.Show("Chat Reader is in v0.1b");
+			//TODO: Add a proper About Page
+			MessageBox.Show("Chat Reader is in " + App.GetVersionString());
 		}
 
 		private void ExitMenuButton_Click(object sender, RoutedEventArgs e) {
