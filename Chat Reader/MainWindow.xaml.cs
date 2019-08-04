@@ -15,6 +15,8 @@ namespace Chat_Reader {
 	public partial class MainWindow : Window {
 		Bot bot;
 
+		bool tempLogoutResult;
+
 		public MainWindow(string username, string oauth) {
 			bot = new Bot(username, oauth, this);
 
@@ -29,8 +31,14 @@ namespace Chat_Reader {
 		}
 
 		private void LogOutButton_Click(object sender, RoutedEventArgs e) {
-			Auth.DeleteAuth();
-			bot.Disconnect();
+			YesNoWindow prompt = new YesNoWindow("Are you sure you want to log out?", this);
+			prompt.ShowDialog();
+			bool result = prompt.GetResult();
+
+			if (result) {
+				Auth.DeleteAuth();
+				bot.Disconnect();
+			}
 		}
 
 		private void AboutButton_Click(object sender, RoutedEventArgs e) {
