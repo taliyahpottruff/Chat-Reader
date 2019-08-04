@@ -100,7 +100,7 @@ namespace Chat_Reader {
 				if (!voices.ContainsKey(user)) {
 					ReadOnlyCollection<InstalledVoice> installed = speech.GetInstalledVoices();
 					int randomName = random.Next(0, 2);
-					int randomRate = random.Next(0, 5) - 2;
+					int randomRate = random.Next(0, 4);
 					Console.WriteLine($"Name index ({randomName}) Rate value ({randomRate})");
 					voices.Add(user, new ChatVoice() {
 						name = installed[randomName].VoiceInfo.Name,
@@ -119,6 +119,14 @@ namespace Chat_Reader {
 		private void LogOutButton_Click(object sender, RoutedEventArgs e) {
 			Auth.DeleteAuth();
 			client.Disconnect();
+		}
+
+		private void AboutButton_Click(object sender, RoutedEventArgs e) {
+			MessageBox.Show("Chat Reader is in v0.1b");
+		}
+
+		private void ExitMenuButton_Click(object sender, RoutedEventArgs e) {
+			System.Environment.Exit(0);
 		}
 	}
 }

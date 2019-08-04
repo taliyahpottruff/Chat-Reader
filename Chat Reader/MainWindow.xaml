@@ -16,7 +16,9 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem Name="LogOutButton" Header="_Log Out" Click="LogOutButton_Click" />
+                <MenuItem Name="ExitMenuButton" Header="_Exit" Click="ExitMenuButton_Click" />
             </MenuItem>
+            <MenuItem Header="_About" Name="AboutButton" Click="AboutButton_Click"></MenuItem>
         </Menu>
         <ListBox Name="Chat" Background="#FF181818" Foreground="White" BorderThickness="0"></ListBox>
     </DockPanel>
